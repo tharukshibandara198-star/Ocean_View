@@ -1,0 +1,286 @@
+/* ================================================================
+   styles.css  —  Ocean View Resort Custom Stylesheet
+   Theme: Ocean blues, clean whites, warm accents
+   ================================================================ */
+
+/* ── Google Font Import ─────────────────────────────────────────── */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* ── CSS Variables (Design Tokens) ─────────────────────────────── */
+:root {
+    --ocean-dark:    #0a2342;
+    --ocean-mid:     #1a5276;
+    --ocean-light:   #2e86c1;
+    --ocean-bright:  #3498db;
+    --sand:          #f39c12;
+    --coral:         #e74c3c;
+    --seafoam:       #1abc9c;
+    --white:         #ffffff;
+    --light-bg:      #f0f4f8;
+    --card-shadow:   0 4px 20px rgba(0,0,0,0.08);
+    --radius:        12px;
+    --transition:    0.25s ease;
+}
+
+/* ── Base ───────────────────────────────────────────────────────── */
+* { box-sizing: border-box; }
+
+body {
+    font-family: 'Poppins', 'Segoe UI', sans-serif;
+    background-color: var(--light-bg);
+    color: #333;
+    margin: 0;
+}
+
+/* ── Navigation Bar ─────────────────────────────────────────────── */
+.navbar {
+    background: linear-gradient(135deg, var(--ocean-dark) 0%, var(--ocean-mid) 100%);
+    padding: 0.75rem 1.5rem;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.3);
+}
+
+.navbar-brand {
+    font-size: 1.3rem;
+    color: var(--white) !important;
+    letter-spacing: 0.5px;
+}
+
+.navbar .nav-link {
+    color: rgba(255,255,255,0.85) !important;
+    padding: 0.5rem 0.9rem;
+    border-radius: 6px;
+    transition: background var(--transition);
+    font-size: 0.92rem;
+}
+
+.navbar .nav-link:hover,
+.navbar .nav-link.active {
+    background: rgba(255,255,255,0.18);
+    color: var(--white) !important;
+}
+
+/* ── LOGIN PAGE ─────────────────────────────────────────────────── */
+.login-body {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(160deg, var(--ocean-dark) 0%, var(--ocean-mid) 50%, var(--ocean-light) 100%);
+    padding: 20px;
+}
+
+.login-wrapper {
+    width: 100%;
+    max-width: 440px;
+}
+
+.login-brand .brand-icon {
+    color: rgba(255,255,255,0.9);
+    filter: drop-shadow(0 4px 8px rgba(0,0,0,0.3));
+}
+
+.login-brand .brand-title {
+    color: var(--white);
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    margin-bottom: 4px;
+}
+
+.login-brand .brand-subtitle {
+    color: rgba(255,255,255,0.7);
+    font-size: 0.95rem;
+    margin: 0;
+}
+
+.login-card {
+    border: none;
+    border-radius: var(--radius);
+    overflow: hidden;
+}
+
+.login-card .card-header {
+    background: linear-gradient(90deg, var(--ocean-mid), var(--ocean-light));
+    color: var(--white);
+    padding: 1.2rem;
+    border: none;
+}
+
+/* ── PAGE TITLES ────────────────────────────────────────────────── */
+.page-title h3 {
+    font-weight: 600;
+    color: var(--ocean-dark);
+    border-bottom: 3px solid var(--ocean-light);
+    padding-bottom: 8px;
+    display: inline-block;
+}
+
+/* ── WELCOME BANNER (Dashboard) ─────────────────────────────────── */
+.welcome-banner {
+    background: linear-gradient(135deg, var(--ocean-dark) 0%, var(--ocean-light) 100%);
+    color: var(--white);
+    box-shadow: var(--card-shadow);
+}
+
+.welcome-banner .text-white-75 { color: rgba(255,255,255,0.75); }
+
+/* ── ACTION CARDS (Quick Links) ─────────────────────────────────── */
+.action-card {
+    border: 1px solid #e0e8f0;
+    border-radius: var(--radius);
+    transition: transform var(--transition), box-shadow var(--transition);
+    cursor: pointer;
+}
+
+.action-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(46, 134, 193, 0.25);
+    border-color: var(--ocean-bright);
+}
+
+/* ── STAT CARDS (Reports) ───────────────────────────────────────── */
+.stat-card {
+    border-radius: var(--radius);
+    box-shadow: var(--card-shadow);
+    border: none;
+    transition: transform var(--transition);
+}
+
+.stat-card:hover { transform: translateY(-3px); }
+
+.stat-number {
+    font-size: 2.2rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+
+.stat-label {
+    font-size: 0.85rem;
+    color: #666;
+    margin-top: 6px;
+}
+
+/* ── CARDS ──────────────────────────────────────────────────────── */
+.card {
+    border-radius: var(--radius);
+    border: none;
+    box-shadow: var(--card-shadow);
+}
+
+.card-header {
+    background: linear-gradient(90deg, var(--ocean-dark), var(--ocean-mid));
+    color: var(--white);
+    border-radius: var(--radius) var(--radius) 0 0 !important;
+    padding: 0.9rem 1.5rem;
+}
+
+/* ── TABLES ─────────────────────────────────────────────────────── */
+.table-hover tbody tr:hover {
+    background-color: rgba(52, 152, 219, 0.07);
+}
+
+/* ── RESERVATION DETAIL CARD ────────────────────────────────────── */
+.section-label {
+    color: var(--ocean-mid);
+    border-bottom: 2px solid var(--ocean-light);
+    padding-bottom: 4px;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.82rem;
+    letter-spacing: 0.5px;
+}
+
+.detail-table td { padding: 0.4rem 0.5rem; }
+
+/* ── BILL CARD ──────────────────────────────────────────────────── */
+.bill-card {
+    border: 2px solid #dce6f0;
+    max-width: 860px;
+    margin: 0 auto;
+}
+
+.bill-header h2 {
+    color: var(--ocean-dark);
+    font-weight: 700;
+}
+
+.invoice-title {
+    color: var(--ocean-mid);
+    letter-spacing: 2px;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.bill-section-title {
+    color: var(--ocean-mid);
+    text-transform: uppercase;
+    font-size: 0.78rem;
+    letter-spacing: 1.5px;
+    border-bottom: 1.5px solid #cce5f5;
+    padding-bottom: 4px;
+    margin-bottom: 12px;
+}
+
+/* ── FOOTER ─────────────────────────────────────────────────────── */
+.footer {
+    background: linear-gradient(90deg, var(--ocean-dark), var(--ocean-mid));
+    color: rgba(255,255,255,0.65);
+    font-size: 0.85rem;
+    margin-top: auto;
+}
+
+.footer strong { color: rgba(255,255,255,0.9); }
+
+/* ── ACCORDION HELP PAGE ─────────────────────────────────────────── */
+.accordion-button:not(.collapsed) {
+    background-color: #e9f4fd;
+    color: var(--ocean-dark);
+    font-weight: 600;
+}
+
+.accordion-button:focus { box-shadow: 0 0 0 3px rgba(52,152,219,0.25); }
+
+/* ── BUTTONS ─────────────────────────────────────────────────────── */
+.btn-primary {
+    background: linear-gradient(135deg, var(--ocean-mid), var(--ocean-bright));
+    border: none;
+    border-radius: 8px;
+    transition: all var(--transition);
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, var(--ocean-dark), var(--ocean-mid));
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(26,82,118,0.4);
+}
+
+/* ── FORMS ───────────────────────────────────────────────────────── */
+.form-control:focus, .form-select:focus {
+    border-color: var(--ocean-bright);
+    box-shadow: 0 0 0 3px rgba(52,152,219,0.2);
+}
+
+/* ── ALERTS ──────────────────────────────────────────────────────── */
+.alert {
+    border-left: 5px solid;
+    border-radius: var(--radius);
+}
+
+.alert-danger  { border-left-color: var(--coral); }
+.alert-success { border-left-color: var(--seafoam); }
+.alert-info    { border-left-color: var(--ocean-light); }
+.alert-warning { border-left-color: var(--sand); }
+
+/* ── BADGES ──────────────────────────────────────────────────────── */
+.badge {
+    font-size: 0.75rem;
+    border-radius: 6px;
+    padding: 0.35em 0.65em;
+}
+
+/* ── RESPONSIVE TWEAKS ───────────────────────────────────────────── */
+@media (max-width: 768px) {
+    .welcome-banner .btn-lg { width: 100%; margin-top: 12px; }
+    .stat-number { font-size: 1.5rem; }
+    .bill-card { border: none; }
+}
